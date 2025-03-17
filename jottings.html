@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jottings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jottings</h1>
+    </header>
+    <input type="text" id="searchJottings" placeholder="search notes...">
+    <button id="clearAll">Clear All</button>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Note Titles</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="notesList">
+            
+        </tbody>
+    </table>
+    <button id="addNoteBtn">Add Note</button>
+
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Add Note</h3>
+            <textarea id="noteContent" placeholder="Write your notes here..."></textarea>
+            <button id="saveNote">Save</button>
+        </div>
+    </div>
+
+    <div id="viewNoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-view">&times;</span>
+            <h3>View Note</h3>
+            <p id="viewNoteContent"></p>
+        </div>
+    </div>
+
+    <script src="jottings.js"></script>
+    <script src="indexDB.js"></script>
+</body>
+</html>

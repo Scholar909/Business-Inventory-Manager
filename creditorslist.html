@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creditors List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Creditors List</h1>
+    </header>
+    <input type="text" id="creditorSearch" placeholder="Search by name" onkeyup="searchCreditors()">
+    <button onclick="openCreditorForm()">Add Creditor</button>
+    <br>
+    
+    <p>Total Creditors: <span id="totalCreditors">0</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>No.</th>
+                <th>Amt</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="creditorList">
+            
+        </tbody>
+    </table>
+
+    <!-- Creditor Form Modal-->
+    <div id="creditorForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreditorForm()">&times;</span>
+            <h2>Add Creditor</h2>
+            <br>
+            
+            <div>
+            <label>Name:</label>
+            <input type="text" id="creditorName" placeholder="creditor Name">
+            </div>
+            <br>
+
+            <div>
+            <label>Phone Number:</label>
+            <input type="number" id="creditorNumber" placeholder="creditor Number">
+            </div>
+            <br>
+
+            <div>
+            <label>Amount:</label>
+            <input type="number" id="creditorAmount" placeholder="amount Owed">
+            </div>
+            <br>
+
+            <div>
+                <label>Date:</label>
+                <input type="date" id="creditorDate" placeholder="Date">
+            </div>
+            <br>
+            
+            <div>
+            <label>Description:</label>
+            <textarea id="creditorDescription" placeholder="creditor Description: what they bought..."></textarea>
+            <button onclick="saveCreditor()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creditor View Modal-->
+    <div id="creditorView" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreditorView()">&times;</span>
+            <h2 id="viewCreditorName"></h2>
+            <br>
+            <p><strong>Phone Number:<br></strong><span id="viewCreditorNumber"></span></p>
+            <br>
+            <p><strong>Amount:<br></strong><span id="viewCreditorAmount"></span></p>
+            <br>
+            <p><strong>Date:<br></strong><span id="viewCreditorDate"></span></p>
+            <br>
+            <p><strong>Description:<br></strong><span id="viewCreditorDescription"></span></p>
+            <br>
+        </div>
+    </div>
+
+    <!--Edit Form Modal-->
+    <div id="editCreditorForm" style="display: none;" class="modal">
+        <div class="modal-content">
+            <h3>Edit Creditor Details</h3>
+            <br>
+            <label>Name:</label>
+            <input type="text" id="editCreditorName" placeholder="Creditor Name">
+            <br>
+            <label>Number:</label>
+            <input type="number" id="editCreditorNumber" placeholder="Creditor Number">
+            <br>
+            <label>Amount:</label>
+            <input type="number" id="editCreditorAmount" placeholder="Creditor Amount">
+            <br>
+            <label>Date:</label>
+            <input type="date" id="editCreditorDate" placeholder="Creditor Date">
+            <br>
+            <label>Description:</label>
+            <textarea id="editCreditorDescription" placeholder="Creditor Description"></textarea>
+            <br>
+
+            <button onclick="saveEditedCreditor()">Save</button>
+            <button onclick="closeEditedCreditorForm()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="creditors.js"></script>
+    <script src="indexDB.js"></script>
+</body>
+</html>

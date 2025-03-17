@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paid Creditors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Paid Creditors</h1>
+    </header>
+    <input type="text" id="paidCreditorSearch" placeholder="Search by name" onkeyup="searchPaidCreditors()">
+    <br>
+    
+    <p>Total Paid Creditors: <span id="totalPaidCreditors">0</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>No.</th>
+                <th>Amt</th>
+                <th>Dt Pd</th>
+                <th>Acts</th>
+            </tr>
+        </thead>
+        <tbody id="paidCreditorsList">
+
+        </tbody>
+    </table>
+
+    <!--Paid View-->
+    <div id="paidCreditorView" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaidView()">&times;</span>
+            <h2 id="viewPaidCreditorName"></h2>
+            <br>
+            <p><strong>Phone Number:<br></strong><span id="viewPaidCreditorNumber"></span></p>
+            <br>
+            <p><strong>Amount:<br></strong><span id="viewPaidCreditorAmount"></span></p>
+            <br>
+            <p><strong>Date Burrowed:<br></strong><span id="viewPaidCreditorDateBurrowed"></span></p>
+            <br>
+            <p><strong>Date Paid:<br></strong><span id="viewPaidCreditorDate"></span></p>
+            <br>
+            <p><strong>Description:<br></strong><span id="viewPaidCreditorDescription"></span></p>
+            <br>
+        </div>
+      </div>
+    
+    <script src="paid.js"></script>
+    <script src="indexDB.js"></script>
+</body>
+</html>

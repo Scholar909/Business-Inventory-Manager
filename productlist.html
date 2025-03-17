@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Product List</h1>
+    </header>
+    <input type="text" id="productSearch" placeholder="Search by name or category" onkeyup="searchProducts()">
+    <button onclick="openProductForm()">Add Product</button>
+    <br>
+    <p>Total Products: <span id="totalProducts">0</span></p>
+    <p>Total Categories: <span id="totalCategories">0</span></p>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+
+        </tbody>
+    </table>
+
+    <!-- Product Form Modal-->
+    <div id="productForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductForm()">&times;</span>
+            <h2>Add Product</h2>
+            <br>
+            <div>
+            <label>Image:</label>
+            <input type="file" id="productImage" accept="image/*">
+            </div>
+            <br>
+
+            <div>
+            <label>Name:</label>
+            <input type="text" id="productName" placeholder="product Name">
+            </div>
+            <br>
+
+            <div>
+            <label>Category:</label>
+            <input type="text" id="productCategory" placeholder="product Category">
+            </div>
+            <br>
+
+            <div>
+            <label>Price:</label>
+            <input type="number" id="productPrice" placeholder="product Price">
+            </div>
+            <br>
+
+            <div>
+            <label>Description:</label>
+            <textarea id="productDescription" placeholder="product Description: what they bought..."></textarea>
+            <button onclick="saveProduct()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product View Modal-->
+    <div id="productView" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductView()">&times;</span>
+            <img id="viewImage" src="" alt="Product Image">
+            <br>
+            <h2 id="viewName"></h2>
+            <br>
+            <p><strong>Category:<br></strong><span id="viewCategory"></span></p>
+            <br>
+            <p><strong>Price:<br></strong><span id="viewPrice"></span></p>
+            <br>
+            <p><strong>Description:<br></strong><span id="viewDescription"></span></p>
+            <br>
+        </div>
+    </div>
+
+    <!--Edit Form Modal-->
+    <div id="editProductForm" style="display: none;" class="modal">
+        <div class="modal-content">
+            <h3>Edit Product</h3>
+            <br>
+            <label>Image:</label>
+            <input type="file" id="editProductImage">
+            <br>
+            <label>Name:</label>
+            <input type="text" id="editProductName" placeholder="Product Name">
+            <br>
+            <label>Category:</label>
+            <input type="text" id="editProductCategory" placeholder="Product Category">
+            <br>
+            <label>Price:</label>
+            <input type="number" id="editProductPrice" placeholder="Product Price">
+            <br>
+            <label>Description:</label>
+            <textarea id="editProductDescription" placeholder="Product Description"></textarea>
+            <br>
+
+            <button onclick="saveEditedProduct()">Save</button>
+            <button onclick="closeEditForm()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="indexDB.js"></script>
+    
+</body>
+</html>

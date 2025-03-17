@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Inventory Management App</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header><h1>Dashboard</h1></header>
+    <nav>
+        <ul>
+            <li><a href="productlist.html">Product List</a></li>
+            <li><a href="creditorslist.html">Creditors List</a></li>
+            <li><a href="paidcreditorslist.html">Paid Creditors</a></li>
+            <li><a href="jottings.html">Jottings</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </nav>
+    
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator){
+        navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log("Service Worker Registered"))
+        .catch((error) => console.log("Service Worker Failed", error));
+      }
+    </script>
+</body>
+</html>
