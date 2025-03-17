@@ -13,7 +13,7 @@ const urlsToCache = [
     "/jottings.js",
     "/paid.js",
     "/products.js",
-    "/IMG-20250316-WA0171.png"
+    "/icon.png"
 ];
 
 self.addEventListener("install", (event) => {

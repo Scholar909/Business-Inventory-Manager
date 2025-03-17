@@ -10,12 +10,12 @@
   "theme_color": "#6200ea",
   "icons": [
       {
-      "src": "/IMG-20250316-WA0171.png",
+      "src": "/icon.png",
       "sizes": "192x192",
       "type": "image/png"
       },
       {
-          "src": "/IMG-20250316-WA0171.png",
+          "src": "/icon.png",
           "sizes": "512x512",
           "type": "image/png"
       }
@@ -23,17 +23,5 @@
   "launch_handler": {
     "client_mode": "auto"
   },
-  "screenshots": [
-    {
-      "src": "/IMG-20250316-WA0171.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    },
-    {
-      "src": "/IMG-20250316-WA0171.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    }
-  ]
 }
 
